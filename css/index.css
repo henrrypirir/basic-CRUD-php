@@ -13,7 +13,8 @@ body {
   margin: 0 auto; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #56638A; }
 
 .title {
   text-align: center; }
