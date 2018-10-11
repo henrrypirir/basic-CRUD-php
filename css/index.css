@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css?family=Niramit");
+body {
+  font-size: 16px;
+  font-family: 'Niramit', sans-serif; }
+
+.flex-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.container {
+  width: 80%;
+  margin: 0 auto; }
+
+table th {
+  border: 1px solid; }
+
+.web-form {
+  width: 50%;
+  margin: 0 auto; }
+  .web-form .form-field {
+    margin-bottom: 25px; }
+    .web-form .form-field label, .web-form .form-field input, .web-form .form-field select {
+      display: block;
+      width: 100%; }
+    .web-form .form-field input, .web-form .form-field select {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      border: 1px solid gray;
+      border-radius: 25px;
+      padding: 10px 20px; }
+  .web-form .btn {
+    border-radius: 25px;
+    border: none;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    color: white;
+    background-color: green;
+    font-weight: bold;
+    letter-spacing: .1em; }
