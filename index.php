@@ -8,41 +8,49 @@
   </head>
   <?php include "connectionDB.php"; ?>
   <body>
-
-    <table class="table table-bordered table-responsive" >
-        <tr>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Edad</th>
-            <th>Dirección</th>
-            <th>Genero</th>
-            <th>Fecha de nacimiento</th>
-            <th>Nacionalidad</th>
-            <th>Carné</th>
-            <th colspan="2" align="center">Opciones</th>
-        </tr>
-          <?php
-          $query = $conn->query("SELECT * FROM alumno");
-          $query->execute();
-          foreach ($query as $student) {
-            ?>
+    <div class="container">
+      <h1>Listado de Alumnos registrados.</h1>
+      <table class="table table-bordered table-responsive" >
+          <thead>
             <tr>
-              <th><?php echo $student[1] ?></th>
-              <th><?php echo $student[2] ?></th>
-              <th><?php echo $student[3] ?></th>
-              <th><?php echo $student[4] ?></th>
-              <th><?php echo $student[5] ?></th>
-              <th><?php echo $student[6] ?></th>
-              <th><?php echo $student[7] ?></th>
-              <th><?php echo $student[8] ?></th>
-              <th><a href="edit.php?id=<?php echo $student[0] ?>">Editar</a></th>
-              <th>Eliminar</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Edad</th>
+              <th>Dirección</th>
+              <th>Genero</th>
+              <th>Fecha de nacimiento</th>
+              <th>Nacionalidad</th>
+              <th>Carné</th>
+              <th colspan="2" align="center">Opciones</th>
             </tr>
+          </thead>
             <?php
-          }
-          ?>
-    </table>
+            $query = $conn->query("SELECT * FROM alumno");
+            $query->execute();
+            ?>
+            <?php if ($query->rowCount() > 0): ?>
+              <?php foreach ($query as $student): ?>
+                <tr>
+                  <td><?php echo $student["nombres"] ?></td>
+                  <td><?php echo $student["apellidos"] ?></td>
+                  <td><?php echo $student["edad"] ?></td>
+                  <td><?php echo $student["direccion"] ?></td>
+                  <td><?php echo $student["genero"] ?></td>
+                  <td><?php echo $student["fecha_nacimiento"] ?></td>
+                  <td><?php echo $student["nacionalidad"] ?></td>
+                  <td><?php echo $student["carne"] ?></td>
+                  <td><a href="edit.php?id=<?php echo $student[0] ?>">Editar</a></th>
+                  <td>Eliminar</td>
+                </tr>
+              <?php endforeach; ?>
+            <?php else: ?>
+              <tbody>
+                <h2>No existe ningun usuario aun registrado.</h2>
+              </tbody>
+            <?php endif; ?>
+      </table>
 
-    <a href="add.php">Agregar</a>
+      <a href="add.php" class="btn">Agregar</a>
+    </div>
   </body>
 </html>

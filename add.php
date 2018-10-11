@@ -48,6 +48,7 @@
    ?>
   <body>
     <div class="container">
+      <h1 class="title">Agregar usuario nuevo.</h1>
       <form class="web-form" method="post">
         <div class="form-field">
           <label for="first_name">Nombres:</label>
