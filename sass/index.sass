@@ -1,8 +1,20 @@
 @import "main"
 
 table
+  border-collapse: collapse
+  border: 1px solid $gray-color
+  td
+    border: 1px solid $gray-color
+    font-weight: normal
+    padding: 5px 15px
+  tr
+    &:hover
+      background-color: $offwhite-color
   th
-    border: 1px solid
+    background-color: $blue-color
+    color: $white-color
+    border-color: $white-color
+    padding: 5px 15px
 
 .web-form
   width: 50%
@@ -14,15 +26,6 @@ table
       width: 100%
     input, select
       box-sizing: border-box
-      border: 1px solid gray
+      border: 1px solid $gray-color
       border-radius: 25px
       padding: 10px 20px
-  .btn
-    border-radius: 25px
-    border: none
-    padding: 10px 25px
-    text-transform: uppercase
-    color: white
-    background-color: green
-    font-weight: bold
-    letter-spacing: .1em
