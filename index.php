@@ -45,7 +45,11 @@
               <?php endforeach; ?>
             <?php else: ?>
               <tbody>
-                <h2>No existe ningun usuario aun registrado.</h2>
+                <tr>
+                  <td colspan="10">
+                    <h2>No existe ningun usuario aun registrado.</h2>
+                  </td>
+                </tr>
               </tbody>
             <?php endif; ?>
       </table>
