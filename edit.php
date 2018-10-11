@@ -108,7 +108,7 @@
           </form>
         <?php endforeach; ?>
       <?php else: ?>
-        <h1>Usuario incorrecto, verifique el id del usuario que desea editar</h1>
+        <h1 class="title">No se ha encontrado ningun alumno con el identificador <?php echo $id; ?>, verifique el id del usuario que desea editar</h1>
       <?php endif; ?>
    </div>
   </body>
