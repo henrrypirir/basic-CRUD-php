@@ -6,7 +6,10 @@
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/index.css">
   </head>
-  <?php include "connectionDB.php"; ?>
+
+  <?php include "functions.php"; ?>
+  <?php $student = new Student(); ?>
+
   <body>
     <div class="container">
       <h1>Listado de Alumnos registrados.</h1>
@@ -25,8 +28,7 @@
             </tr>
           </thead>
             <?php
-            $query = $conn->query("SELECT * FROM alumno");
-            $query->execute();
+            $query = $student->getStudent("");
             ?>
             <?php if ($query->rowCount() > 0): ?>
               <?php foreach ($query as $student): ?>

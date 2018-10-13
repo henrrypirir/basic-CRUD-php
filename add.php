@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/index.css">
   </head>
 
-  <?php include "connectionDB.php"; ?>
+  <?php include "functions.php"; ?>
 
   <?php
     if(isset($_POST['btn-save'])){
@@ -20,30 +20,8 @@
       $nacionality = $_POST['nacionality'];
       $carne = $_POST['carne'];
 
-      if(isset($first_name) && !empty($first_name) &&
-      isset($last_name) && !empty($last_name) &&
-      isset($age) && !empty($age) &&
-      isset($address) && !empty($address) &&
-      isset($gender) && !empty($gender) &&
-      isset($birthday) && !empty($birthday) &&
-      isset($nacionality) && !empty($nacionality) &&
-      isset($carne) && !empty($carne)){
-        try{
-          $query = $conn->prepare("INSERT INTO alumno (nombres, apellidos, edad, direccion, genero, fecha_nacimiento, nacionalidad, carne) VALUES(:first_name, :last_name, :age, :address, :gender, :birthday, :nacionality, :carne)");
-          $query->bindparam(":first_name" , $first_name);
-          $query->bindparam(":last_name" , $last_name);
-          $query->bindparam(":age" , $age);
-          $query->bindparam(":address" , $address);
-          $query->bindparam(":gender" , $gender);
-          $query->bindparam(":birthday" , $birthday);
-          $query->bindparam(":nacionality" , $nacionality);
-          $query->bindparam(":carne" , $carne);
-          $query->execute();
-        }
-        catch(PDOException $e){
-          echo $e->getMessage();;
-        }
-      }
+      $student = new Student();
+      $student->create($first_name, $last_name, $age, $address, $gender, $birthday, $nacionality, $carne);
     }
    ?>
   <body>
