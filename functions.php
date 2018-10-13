@@ -81,4 +81,6 @@
       }
     }
   }
+
+  $student = new Student();
  ?>

@@ -12,7 +12,6 @@
       $nacionality = $_POST['nacionality'];
       $carne = $_POST['carne'];
 
-      $student = new Student();
       $student->create($first_name, $last_name, $age, $address, $gender, $birthday, $nacionality, $carne);
     }
    ?>

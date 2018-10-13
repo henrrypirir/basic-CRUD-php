@@ -1,6 +1,5 @@
 <?php include 'snippets/header.php'; ?>
 <?php include "functions.php"; ?>
-<?php $student = new Student(); ?>
 
   <h1>Listado de Alumnos registrados.</h1>
   <table class="table table-bordered table-responsive" >

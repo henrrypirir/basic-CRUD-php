@@ -1,6 +1,5 @@
 <?php include 'snippets/header.php'; ?>
 <?php include "functions.php"; ?>
-<?php $student = new Student(); ?>
 
   <?php
     $id = $_GET['id'];
