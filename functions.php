@@ -80,6 +80,19 @@
         return $query;
       }
     }
+
+    public function delete($id)
+    {
+      if (isset($id ) && !empty($id)) {
+        try {
+          $query = $this->conn->prepare("DELETE FROM alumno WHERE id=:id");
+          $query->bindparam(":id", $id);
+          $query->execute();
+        } catch (PDOException $e) {
+          echo $e->getMessage();
+        }
+      }
+    }
   }
 
   $student = new Student();
