@@ -17,8 +17,8 @@ class App
       $archivoController = 'controllers/main.php';
       require $archivoController;
       $controller = new Main();
+      $controller->loadModel('listado');
       $controller->render();
-      $controller->loadModel('main');
       return false;
     }
 

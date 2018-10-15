@@ -3,7 +3,7 @@
   /**
    *
    */
-  class Main extends Controller
+  class Listado extends Controller
   {
 
     function __construct()
@@ -15,7 +15,7 @@
     public function render()
     {
       $this->view->query = $this->model->getStudent("");
-      $this->view->render('main/index');
+      $this->view->render('listado/index');
     }
   }
 

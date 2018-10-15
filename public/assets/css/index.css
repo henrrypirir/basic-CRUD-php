@@ -59,6 +59,7 @@ header .main-menu {
       margin-right: 30px; }
 
 footer {
+  margin-top: 30px;
   background-color: #56638A;
   color: #FFF; }
   footer .social a {
