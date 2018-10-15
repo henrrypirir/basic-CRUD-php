@@ -1,14 +1,13 @@
 <?php
-
 /**
  *
  */
-class Error
+class Model
 {
 
   function __construct()
   {
-    echo "Error 404";
+    // code...
   }
 }
 

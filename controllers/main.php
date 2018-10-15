@@ -3,12 +3,13 @@
   /**
    *
    */
-  class Main
+  class Main extends Controller
   {
 
     function __construct()
     {
-      echo "Controlador main";
+      parent::__construct();
+      $this->view->render('main/index');
     }
 
     public function Saludo()

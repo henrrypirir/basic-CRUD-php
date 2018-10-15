@@ -37,6 +37,15 @@ a {
   .btn:hover {
     background-color: #F3B918; }
 
+header .main-menu {
+  background-color: #D5D5D3; }
+  header .main-menu .menu {
+    margin: 0;
+    padding: 25px 0;
+    list-style: none; }
+    header .main-menu .menu li {
+      margin-right: 30px; }
+
 table {
   border-collapse: collapse;
   border: 1px solid #D5D5D3; }

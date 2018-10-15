@@ -1,2 +1,10 @@
 RewriteEngine on
+
+#condicion para poder consultar archivos locales sin hacer uso de index.php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+#end condicion
+
+
 RewriteRule ^(.*)$ index.php?slug=$1 [L,QSA]
