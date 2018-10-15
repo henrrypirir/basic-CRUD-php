@@ -1,5 +1,10 @@
 <?php include 'views/header.php'; ?>
 
+  <div class="message">
+    <div class="container">
+      <?php echo $this->message; ?>
+    </div>
+  </div>
   <h1 class="title">Agregar usuario nuevo.</h1>
   <form class="web-form" method="post" action="<?php echo constant('URL'); ?>nuevo/add">
     <div class="form-field">
