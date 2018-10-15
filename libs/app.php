@@ -17,6 +17,8 @@ class App
       $archivoController = 'controllers/main.php';
       require $archivoController;
       $controller = new Main();
+      $controller->render();
+      $controller->loadModel('main');
       return false;
     }
 
@@ -24,9 +26,12 @@ class App
     if (file_exists($archivoController)) {
       require $archivoController;
       $controller = new $slug[0];
+      $controller->loadModel($slug[0]);
 
       if(isset($slug[1])){
         $controller->{$slug[1]}();
+      }else{
+        $controller->render();
       }
     }else{
       $controller = new Errores();
