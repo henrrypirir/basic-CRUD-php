@@ -1,7 +1,7 @@
 <?php include 'views/header.php'; ?>
 
   <h1 class="title">Agregar usuario nuevo.</h1>
-  <form class="web-form" method="post">
+  <form class="web-form" method="post" action="<?php echo constant('URL'); ?>student/add">
     <div class="form-field">
       <label for="first_name">Nombres:</label>
       <input type="text" name="first_name" class="form-control" required maxlength="30">

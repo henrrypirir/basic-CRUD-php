@@ -1,8 +1,9 @@
 <?php
+
 /**
  *
  */
-class NuevoModel extends Model
+class StudentModel extends Model
 {
 
   function __construct()
@@ -29,6 +30,33 @@ class NuevoModel extends Model
       echo $e->getMessage();
       return false;
     }
+  }
+
+  public function getStudents($id=null)
+  {
+    try {
+      if ($id) {
+        $query = $this->conn->query("SELECT * FROM alumno WHERE id=$id");
+        return $query->fetch();
+      }else {
+        $query = $this->conn->query("SELECT * FROM alumno");
+        return $query;
+      }
+    } catch (PDOException $e) {
+      echo $e-getMessage();
+      return false;
+    }
+
+  }
+
+  public function update()
+  {
+    echo "method update model";
+  }
+
+  public function delete()
+  {
+    echo "method delete model";
   }
 }
 

@@ -5,9 +5,10 @@
 class Model
 {
 
-  function __construct() {
+  function __construct()
+  {
     $db = new DBConnection();
-    $this->conn = $db->Connect();
+    $this->conn = $db->connect();
   }
 }
 
