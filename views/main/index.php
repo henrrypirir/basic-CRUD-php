@@ -41,5 +41,5 @@
     </tbody>
   </table>
 
-  <a href="<?php echo constant("URL"); ?>student" class="btn">Agregar</a>
+  <a href="<?php echo constant("URL"); ?>student/nuevo" class="btn">Agregar</a>
 <?php include 'views/footer.php'; ?>

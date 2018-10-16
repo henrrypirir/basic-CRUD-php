@@ -20,6 +20,18 @@ class Student extends Controller
     }
   }
 
+  public function listado()
+  {
+    $this->view->query = $this->model->getStudents();
+    $this->render('student/listado');
+  }
+
+  public function nuevo()
+  {
+    $this->render('student/nuevo');
+  }
+
+
   public function add()
   {
     $mensaje = "";
@@ -47,12 +59,6 @@ class Student extends Controller
         exit;
       }
     }
-  }
-
-  public function listado()
-  {
-    $this->view->query = $this->model->getStudents();
-    $this->render('student/listado');
   }
 
   public function edit()
