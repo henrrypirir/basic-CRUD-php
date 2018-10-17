@@ -27,8 +27,8 @@
           <td><?php echo $student["fecha_nacimiento"] ?></td>
           <td><?php echo $student["nacionalidad"] ?></td>
           <td><?php echo $student["carne"] ?></td>
-          <td><a href="edit.php?id=<?php echo $student["id"] ?>">Editar</a></th>
-            <td><span class="delete" id="<?php echo $student["id"]; ?>">Eliminar</span></td>
+          <td><a href="<?php echo constant("URL"); ?>student/profile/<?php echo $student["id"]; ?>">Editar</a></th>
+          <td><a href="<?php echo constant("URL"); ?>student/delete/<?php echo $student['id']; ?>" class="delete">Eliminar</a></td>
           </tr>
         <?php endforeach; ?>
       <?php else: ?>

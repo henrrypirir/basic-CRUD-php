@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS `alumno` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombres` varchar(30) COLLATE utf8_bin NOT NULL,
   `apellidos` varchar(50) COLLATE utf8_bin NOT NULL,
   `edad` int(2) NOT NULL,

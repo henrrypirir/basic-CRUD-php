@@ -13,8 +13,8 @@ SHOWSTUDENTS.table = (function() {
           success: function(result){
             $('#list-students').html(result);
             $('.delete').click(function() {
-              var id = $(this).attr("id");
-              self.delete(id);
+              var urlDelete = $(this).attr('href');
+              self.delete(urlDelete);
             })
           },
           error: function(e){
@@ -23,10 +23,9 @@ SHOWSTUDENTS.table = (function() {
         });
       }
 
-    self.delete = function(id) {
+    self.delete = function(urlDelete) {
       $.ajax({
-        url: './delete.php',
-        data: {"id": id},
+        url: urlDelete,
         type: 'post',
         success: function(){self.getStudents();},
         error: function(e){

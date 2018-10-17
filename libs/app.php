@@ -23,18 +23,34 @@ class App
     }
 
     // controller > method
+
+    // controller
     $archivoController = 'controllers/'. $slug[0] .'.php';
     if (file_exists($archivoController)) {
+      // controller
       require $archivoController;
       $controller = new $slug[0];
       $controller->loadModel($slug[0]);
 
-      if (isset($slug[1])) {
-        $controller->$slug[1]();
-      }elseif(method_exists($controller,'initDefault')){
-        $controller->initDefault();
-      }else{
-        $controller = new Errores();
+      // numero elemenots SLUG URL
+      $nparam = sizeOf($slug);
+
+      // si hay metodo
+      if ($nparam > 1) {
+        // si hay parametros
+        if ($nparam > 2) {
+          $param = [];
+          for ($i=2; $i < $nparam; $i++) {
+            array_push($param, $slug[$i]);
+          }
+          $controller->$slug[1]($param);
+        }elseif(method_exists($controller, $slug[1])) {
+          $controller->$slug[1]();
+        }elseif(method_exists($controller,'initDefault')){
+          $controller->initDefault();
+        }else{
+          $controller = new Errores();
+        }
       }
     }else{
         $controller = new Errores();

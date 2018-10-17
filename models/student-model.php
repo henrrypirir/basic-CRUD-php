@@ -43,20 +43,55 @@ class StudentModel extends Model
         return $query;
       }
     } catch (PDOException $e) {
-      echo $e-getMessage();
-      return false;
+      echo $e->getMessage();
     }
 
   }
 
-  public function update()
+  public function update($id, $first_name, $last_name, $age, $address, $gender, $birthday, $nacionality, $carne)
   {
-    echo "method update model";
+    if(isset($first_name) && !empty($first_name) &&
+    isset($last_name) && !empty($last_name) &&
+    isset($age) && !empty($age) &&
+    isset($address) && !empty($address) &&
+    isset($gender) && !empty($gender) &&
+    isset($birthday) && !empty($birthday) &&
+    isset($nacionality) && !empty($nacionality) &&
+    isset($carne) && !empty($carne) &&
+    isset($id) && !empty($id)){
+      try{
+        $query = $this->conn->prepare("UPDATE alumno SET nombres=:first_name, apellidos=:last_name, edad=:age, direccion=:address, genero=:gender, fecha_nacimiento=:birthday, nacionalidad=:nacionality, carne=:carne WHERE id=:id");
+        $query->bindparam(":id" , $id);
+        $query->bindparam(":first_name" , $first_name);
+        $query->bindparam(":last_name" , $last_name);
+        $query->bindparam(":age" , $age);
+        $query->bindparam(":address" , $address);
+        $query->bindparam(":gender" , $gender);
+        $query->bindparam(":birthday" , $birthday);
+        $query->bindparam(":nacionality" , $nacionality);
+        $query->bindparam(":carne" , $carne);
+        $query->execute();
+        return true;
+      }
+      catch(PDOException $e){
+        echo $e->getMessage();
+        return false;
+      }
+    }
   }
 
-  public function delete()
+  public function delete($id)
   {
-    echo "method delete model";
+    try {
+      $query = $this->conn->prepare("DELETE FROM alumno WHERE id=:id");
+      $query->bindparam(":id", $id);
+      $query->execute();
+      return true;
+    } catch (PDOException $e) {
+      echo $e->getMessage();
+      return false;
+    }
+
   }
 }
 
